@@ -1,0 +1,67 @@
+/* ELEMENT SELECTORS: style every tag of that type */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ecfdf5;
+  color: #064e3b;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  color: #047857;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #6ee7b7;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #059669;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ID SELECTORS (#): style one specific element */
+#add-expense {
+  background-color: #ffffff;
+  border: 2px solid #10b981;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+#expense-list {
+  background-color: #d1fae5;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* CLASS SELECTORS (.): style any element with that class */
+.input-group {
+  margin-bottom: 15px;
+}
+
+.placeholder-text {
+  color: #6b7280;
+  font-style: italic;
+}
