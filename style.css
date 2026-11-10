@@ -1,67 +1,276 @@
-/* ELEMENT SELECTORS: style every tag of that type */
+/* ==========================================================
+   GOOGLE FONTS: Poppins (headings) + Inter (body)
+   ========================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap");
+
+/* ==========================================================
+   COLOR PALETTE (emerald green theme)
+   ========================================================== */
+:root {
+  --primary: #047857;        /* headings, table header, labels */
+  --primary-dark: #065f46;   /* button hover */
+  --accent: #10b981;         /* underlines, focus glow */
+  --background: #ecfdf5;     /* page background, alternating rows */
+  --card: #ffffff;           /* card surfaces */
+  --text: #064e3b;           /* body text */
+  --muted: #6b7280;          /* secondary text */
+  --border: #6ee7b7;         /* borders */
+  --soft: #d1fae5;           /* hover highlight */
+
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/* ==========================================================
+   BASE + TYPOGRAPHY
+   ========================================================== */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #ecfdf5;
-  color: #064e3b;
-  max-width: 600px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: var(--background);
+  color: var(--text);
+  max-width: 700px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 24px 16px;
+}
+
+h1,
+h2,
+summary,
+th {
+  font-family: var(--font-heading);
 }
 
 h1 {
-  color: #047857;
+  color: var(--primary);
+  font-size: 2rem;
   text-align: center;
+  margin: 0 0 12px;
+}
+
+h2 {
+  color: var(--primary);
+  font-size: 1.35rem;
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--accent);
+  display: inline-block;
 }
 
 p {
   text-align: center;
+  margin: 0 0 20px;
+  color: var(--muted);
+}
+
+/* ==========================================================
+   CARDS (heading, details, form, table, video)
+   ========================================================== */
+h1,
+details,
+#add-expense,
+#expense-list,
+#tips-video {
+  background-color: var(--card);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(4, 120, 87, 0.12);
+}
+
+/* Page heading card */
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-top: 6px solid var(--primary);
+}
+
+h1 img {
+  height: 40px;
+  width: auto;
+}
+
+/* Intro paragraph under the heading card */
+body > p {
+  margin: -8px 0 24px;
+}
+
+/* How-to-use details card */
+summary {
+  cursor: pointer;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+details p {
+  text-align: left;
+  color: var(--text);
+  margin: 12px 0 0;
+}
+
+/* ==========================================================
+   FORM
+   ========================================================== */
+.input-group {
+  margin-bottom: 16px;
 }
 
 label {
   display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+input,
+select,
+button {
+  font-family: var(--font-body);
+  font-size: 1rem;
 }
 
 input,
 select {
   width: 100%;
-  padding: 8px;
-  border: 1px solid #6ee7b7;
-  border-radius: 6px;
-  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: var(--text);
 }
 
 button {
-  background-color: #059669;
-  color: white;
-  padding: 10px 20px;
+  background-color: var(--primary);
+  color: #ffffff;
+  padding: 12px 24px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
+  font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-/* ID SELECTORS (#): style one specific element */
-#add-expense {
-  background-color: #ffffff;
-  border: 2px solid #10b981;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-#expense-list {
-  background-color: #d1fae5;
-  border-radius: 10px;
-  padding: 20px;
-}
-
-/* CLASS SELECTORS (.): style any element with that class */
-.input-group {
-  margin-bottom: 15px;
+button:hover {
+  background-color: var(--primary-dark);
 }
 
 .placeholder-text {
-  color: #6b7280;
+  color: var(--muted);
   font-style: italic;
+}
+
+/* ==========================================================
+   EXPENSE TABLE
+   ========================================================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 12px 16px;
+  text-align: left;
+}
+
+thead th {
+  background-color: var(--primary);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--background);
+}
+
+tbody tr:hover {
+  background-color: var(--soft);
+}
+
+/* Amount column aligned right */
+th:nth-child(2),
+td:nth-child(2) {
+  text-align: right;
+}
+
+/* ==========================================================
+   VIDEO
+   ========================================================== */
+iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+}
+
+/* ==========================================================
+   ADVANCED SELECTORS (from Week 2)
+   ========================================================== */
+
+/* 1. Descendant selector: every td inside the expenses section */
+.expenses-section td {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+/* 2. Direct child selector: inputs directly inside an input group */
+.input-group > input {
+  background-color: #f0fdf4;
+}
+
+/* 3. Position pseudo-class: make the last row bold */
+tbody tr:last-child td {
+  font-weight: bold;
+}
+
+/* 4. Negation pseudo-class: every input except number inputs */
+input:not([type="number"]) {
+  border-width: 2px;
+}
+
+/* 5. Focus state: highlight the field you are typing in */
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 6px var(--accent);
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+    padding: 16px;
+  }
+
+  h1,
+  details,
+  #add-expense,
+  #expense-list,
+  #tips-video {
+    padding: 16px;
+  }
+
+  th,
+  td {
+    padding: 8px 10px;
+  }
 }
