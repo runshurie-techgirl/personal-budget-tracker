@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # My Budget Tracker
 
 A simple budget tracker page built with plain HTML and CSS. This week's update focuses entirely on visual design: the HTML structure is unchanged, and CSS turns the page into a clean, card-based interface.
@@ -124,3 +123,4 @@ In the coming weeks I want to make the tracker actually work: the "Add Expense" 
 
 Run Hajir Shurie
 >>>>>>> 945fc4b2d36bb3501fce22d07420245ae835dc60
+
