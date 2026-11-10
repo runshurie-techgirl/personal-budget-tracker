@@ -65,3 +65,58 @@ button {
   color: #6b7280;
   font-style: italic;
 }
+
+
+/* ---------- Expense Table ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #ffffff;
+}
+
+th,
+td {
+  border: 1px solid #6ee7b7;
+  padding: 10px 14px;
+  text-align: left;
+}
+
+thead th {
+  background-color: #047857;
+  color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #ecfdf5;
+}/* ---------- Advanced Selectors ---------- */
+
+/* 1. Descendant selector: every td inside the expenses section */
+.expenses-section td {
+  color: #064e3b;
+  font-size: 0.95rem;
+}
+
+/* 2. Direct child selector: inputs directly inside an input group */
+.input-group > input {
+  background-color: #f0fdf4;
+}
+
+/* 3. Position pseudo-class: make the last row bold */
+tbody tr:last-child td {
+  font-weight: bold;
+}
+
+/* 4. Negation pseudo-class: every input except number inputs */
+input:not([type="number"]) {
+  border-width: 2px;
+}
+
+/* 5. Focus state: highlight the field you are typing in */
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #047857;
+  box-shadow: 0 0 6px #10b981;
+}
+
